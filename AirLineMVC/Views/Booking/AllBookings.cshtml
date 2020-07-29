@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AirLineMVC.Models.Booking>
+
+@{
+    ViewBag.Title = "AllBookings";
+}
+
+<h2>All Bookings</h2>
+
+<p>
+    @Html.ActionLink("Book New Tickets ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.destination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member)
+        </th>
+        <th> Edit Booking </th>
+        <th>Delete Booking </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member)
+            </td>
+            <td class="btn btn-success">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id })
+            </td>
+            <td class="btn btn-danger">
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<h1 class="btn btn-default"> @Html.ActionLink("Back to Main Page", "Dashboard", "Home") </h1>

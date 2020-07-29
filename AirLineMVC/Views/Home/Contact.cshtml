@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+<br /><br /><br />
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/img/cnt.jpg" class="img-thumbnail" style="height:400px;" />
+
+        </div>
+        <div class="col-md-6">
+           
+            <form method="POST" action="postQuery">
+                <label>Enter Name </label> <br />
+                <input type="text" name="txtName" placeholder="Enter Name" class="form-control" required/><br /><br />
+
+                <label>Enter Email </label> <br />
+                <input type="email" name="txtEmail" placeholder="Enter Email"class="form-control" required /><br /><br />
+
+                <label>Enter Message </label> <br />
+                <input type="text" name="txtMsg" placeholder="Enter Message" class="form-control" required/><br /><br />
+
+                <input type="submit" value="Send Message" class="btn btn-primary"/>
+
+            </form>
+        </div>
+    </div>
+
+</div>

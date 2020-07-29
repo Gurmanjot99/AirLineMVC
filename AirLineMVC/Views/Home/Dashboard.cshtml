@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="jumbotron">
+            <h1>Wel come to Admin Zone  </h1>
+            <hr />
+
+
+            <h1 class="btn btn-danger" style="color:white;"> @Html.ActionLink("Booking ", "AllBookings", "Booking") </h1>
+
+            <h1 class="btn btn-danger" style="color:white;"> @Html.ActionLink("Flights", "AllFlights", "Flight") </h1>
+
+            <h1 class="btn btn-danger" style="color:white;"> @Html.ActionLink("Employees ", "AllEmployees", "Employee") </h1>
+
+
+
+            <h1 class="btn btn-default"> @Html.ActionLink("Back to Main Page", "Index", "Home") </h1>
+
+        </div>
+
+    </div>
+
+</div>

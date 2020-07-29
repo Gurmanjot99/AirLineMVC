@@ -1,0 +1,50 @@
+﻿@model IEnumerable<AirLineMVC.Models.Flight>
+
+@{
+    ViewBag.Title = "AllFlights";
+}
+
+<h2>All Flights</h2>
+
+<p>
+    @Html.ActionLink("Add New Flight ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Flight1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Destination)
+        </th>
+        <th>Edit Details </th>
+        <th>Delete Details </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flight1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td class="btn btn-success">
+                @Html.ActionLink("Edit", "Edit", new { id = item.id })
+            </td>
+            <td class="btn btn-danger">
+
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>
+<h1 class="btn btn-default"> @Html.ActionLink("Back to Main Page", "Dashboard", "Home") </h1>
